@@ -1,0 +1,91 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/universal
+{
+	"name": "Default Linux Universal",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "Dockerfile"
+    },
+	"features": {
+		// "ghcr.io/devcontainers/features/aws-cli:1": {}
+		//"ghcr.io/customink/codespaces-features/sam-cli:1": {},
+		//"ghcr.io/joshuanianji/devcontainer-features/aws-cli-persistence:1": {},
+		//"ghcr.io/audacioustux/devcontainers/aws-sam-cli:1": {},
+		//"ghcr.io/goldsam/dev-container-features/aws-sam-cli:1": {},
+		//"ghcr.io/devcontainers-extra/features/amplify-cli:2": {},
+		//"ghcr.io/devcontainers-extra/features/aws-cdk:2": {},
+		//"ghcr.io/devcontainers-extra/features/aws-eb-cli:1": {}
+	},
+    
+	// Mount local folders 
+	"mounts": [
+  		"source=H:/temp,target=/mnt/H_from_local,type=bind,consistency=cached"
+	],
+
+	// a voir ${localEnv:HOME}
+	
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter",
+                "ms-python.black-formatter",
+				"ms-python.vscode-pylance",
+				"ms-python.isort",
+				"ms-python.autopep8",
+				"ms-azuretools.vscode-docker",
+				"gitpod.gitpod-desktop",
+				"mhutchie.git-graph",
+				"ms-toolsai.jupyter",
+				"amazonwebservices.aws-toolkit-vscode",
+				"mark-tucker.aws-cli-configure",
+				"Boto3typed.boto3-ide",
+				"NecatiARSLAN.aws-s3-vscode-extension",
+				"amazonwebservices.amazon-q-vscode",
+				"AmazonEMR.emr-tools",
+				"AmazonWebServices-AISolutionsArchitecture.bedrock-vscode-playground",
+				"hashicorp.terraform",
+				"4ops.terraform",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"ms-toolsai.datawrangler",
+				"ms-vscode.remote-explorer",
+				"fantasy.markdown-all-in-one-for-web",
+				"GitHub.vscode-pull-request-github",
+				"Postman.postman-for-vscode",
+				"rangav.vscode-thunder-client"
+
+            ],
+            "vscode": {
+                "settings": {
+                    "[python]": {
+                        "editor.defaultFormatter": "ms-python.vscode-pylance",
+                        "editor.codeActionsOnSave": {
+                            "source.fixAll": "explicit",
+                            "source.organizeImports": "explicit"
+                        }
+                    },
+                    "python.analysis.fixAll": [
+                        "source.unusedImports"
+                    ],
+                    "editor.formatOnSave": true
+                }
+            }
+        }
+    },
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// https://www.youtube.com/watch?time_continue=60&v=PSBeVOw7cKQ&embeds_referring_euri=https%3A%2F%2Fwww.bing.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.bing.com&source_ve_path=MzY4NDIsMzY4NDIsMjg2NjY
+	"remoteUser": "oliana",
+	"containerUser": "oliana"
+}
